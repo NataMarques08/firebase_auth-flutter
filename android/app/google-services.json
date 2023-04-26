@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562889962588",
+    "project_id": "autenticacao-teste-3af55",
+    "storage_bucket": "autenticacao-teste-3af55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562889962588:android:6852c026590b563979e299",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562889962588-jt7iugtr3vt68bqr8j3io7hn0gbouln0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8YwlkUTYk_FzIgElqnmCc2geZ1-Bfo_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562889962588-ee6dmnmjsdvlgha18cek37hep89qbauk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
