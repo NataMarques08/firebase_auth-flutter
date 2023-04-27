@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -8,6 +10,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,9 @@ class _LoginState extends State<Login> {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+            addUser(email.text, password.text);
+        },
         child: Text('Login'),
       ),
     );
@@ -53,7 +61,10 @@ class _LoginState extends State<Login> {
             border: OutlineInputBorder(),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.black))),
+                onFieldSubmitted: (String password){},
+                controller: password,
       ),
+      
     );
   }
 
@@ -68,7 +79,21 @@ class _LoginState extends State<Login> {
             border: OutlineInputBorder(),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.black))),
+                onFieldSubmitted: (String email){},
+                controller: email,
       ),
     );
   }
+    void addUser(String email,String password){
+      FirebaseAuth auth = FirebaseAuth.instance;
+      auth.createUserWithEmailAndPassword(email: email, password: password).then((FirebaseUser){
+          print('Usuário salvo com sucesso!');
+          print('Email: ${FirebaseUser.user}');
+
+      }).catchError((error){
+        print('$error');
+      });
+
+  }
+ 
 }
